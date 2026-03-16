@@ -1,19 +1,27 @@
 # Reference Map
 
+Auto-generated module index. New `References/*.md` files are included after running `python Scripts/BuildReferenceMap.py`.
+
 ## Canonical Flow
 1. Read `GeneralRules.md` for baseline continuous execution behavior.
-2. If user gives explicit continuous-execution prompt constraints, apply `ContinuousExecutionDirective.md`.
-3. If task type is optimization, apply `OptimizationRules.md` + `OptimizationDirective.md`.
+2. Apply `ContinuousExecutionDirective.md` when user enforces strong continuous-work constraints.
+3. For optimization tasks, apply `OptimizationRules.md` + `OptimizationDirective.md`.
 4. Use `OptimizationChecklist.md` during execution.
-5. Use `ReportingTemplate.md` for progress updates.
+5. Use `ReportingTemplate.md` for updates.
 6. Use `AcceptanceTemplate.md` + `QualityRubric.md` for closure.
 
-## Purpose Split
-- `GeneralRules.md`: generic always-on behavior
-- `ContinuousExecutionDirective.md`: user-asserted strong constraints
-- `OptimizationRules.md`: optimization execution workflow
-- `OptimizationDirective.md`: user prompt baseline for optimization
-- `OptimizationChecklist.md`: quick execution checklist
-- `ReportingTemplate.md`: output format for milestones/blockers/completion
-- `AcceptanceTemplate.md`: objective acceptance closure
-- `QualityRubric.md`: measurable quality gate
+## Available Modules
+- `GeneralRules.md`
+- `ContinuousExecutionDirective.md`
+- `OptimizationRules.md`
+- `OptimizationDirective.md`
+- `OptimizationChecklist.md`
+- `ReportingTemplate.md`
+- `AcceptanceTemplate.md`
+- `QualityRubric.md`
+- `ModuleSystem.md`
+
+## Extending
+- Add a new `.md` file into `References/`.
+- Run `python Scripts/BuildReferenceMap.py`.
+- Commit and push.

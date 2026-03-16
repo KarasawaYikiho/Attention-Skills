@@ -11,7 +11,10 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 - 稳定反馈：里程碑 + 时间触发进度汇报，避免沉默或刷屏。
 
 ## Rule Map
-- 规则总览：`References/ReferenceMap.md`
+- 规则总览（自动索引）：`References/ReferenceMap.md`
+- 模块化规范：`References/ModuleSystem.md`
+
+## Core Modules
 - 通用连续执行规则：`References/GeneralRules.md`
 - 持续执行强约束：`References/ContinuousExecutionDirective.md`
 - 优化任务专项规则：`References/OptimizationRules.md`
@@ -21,10 +24,13 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 - 验收模板：`References/AcceptanceTemplate.md`
 - 质量评分：`References/QualityRubric.md`
 
-## Script
+## Scripts
 - 命名规范巡检：`Scripts/NamingAudit.py`
   - 用法：`python Scripts/NamingAudit.py <target_path> --json`
   - 作用：扫描命名不符合“单词首字母大写”规则的文件/文件夹并给出建议。
+- 模块索引重建：`Scripts/BuildReferenceMap.py`
+  - 用法：`python Scripts/BuildReferenceMap.py`
+  - 作用：自动重建 `References/ReferenceMap.md`，让新增 MD 模块即时纳入索引。
 
 ## Maintainer Notes
 - 新增场景优先写入 `References/`，保持本文件精简。
