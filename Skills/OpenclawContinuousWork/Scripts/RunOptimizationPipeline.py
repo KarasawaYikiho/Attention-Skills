@@ -4,10 +4,11 @@ RunOptimizationPipeline.py
 One-command pipeline for module maintenance:
 1) Naming audit
 2) Content/link audit
-3) Reference map rebuild
-4) Module graph rebuild
-5) Conflict scan
-6) Summary output
+3) Module order validation
+4) Reference map rebuild
+5) Module graph rebuild
+6) Conflict scan
+7) Summary output
 """
 
 from __future__ import annotations
@@ -35,12 +36,14 @@ def main() -> None:
 
     naming_script = skill_root / "Scripts" / "NamingAudit.py"
     content_script = skill_root / "Scripts" / "ContentLinkAudit.py"
+    order_script = skill_root / "Scripts" / "ValidateModuleOrder.py"
     map_script = skill_root / "Scripts" / "BuildReferenceMap.py"
     graph_script = skill_root / "Scripts" / "BuildModuleGraph.py"
     conflict_script = skill_root / "Scripts" / "DetectRuleConflicts.py"
 
     n_rc, n_out, n_err = run([sys.executable, str(naming_script), str(target), "--json"], skill_root)
     c_rc, c_out, c_err = run([sys.executable, str(content_script), str(target), "--json"], skill_root)
+    o_rc, o_out, o_err = run([sys.executable, str(order_script)], skill_root)
     m_rc, m_out, m_err = run([sys.executable, str(map_script)], skill_root)
     g_rc, g_out, g_err = run([sys.executable, str(graph_script)], skill_root)
     f_rc, f_out, f_err = run([sys.executable, str(conflict_script)], skill_root)
@@ -55,7 +58,7 @@ def main() -> None:
         "conflict_scan": {"rc": f_rc, "stdout": f_out, "stderr": f_err},
     }
 
-    ok = n_rc == 0 and c_rc == 0 and m_rc == 0 and g_rc == 0 and f_rc == 0
+    ok = n_rc == 0 and c_rc == 0 and o_rc == 0 and m_rc == 0 and g_rc == 0 and f_rc == 0
     result["ok"] = ok
 
     if args.json:
@@ -68,6 +71,7 @@ def main() -> None:
         print(f"Naming Issues: {naming_count}")
         print(f"Duplicate Paragraph Groups: {dup_count}")
         print(f"Missing Links: {miss_count}")
+        print(f"ModuleOrder: {'OK' if o_rc == 0 else 'FAILED'}")
         print(f"ReferenceMap: {'OK' if m_rc == 0 else 'FAILED'}")
         print(f"ModuleGraph: {'OK' if g_rc == 0 else 'FAILED'}")
         print(f"ConflictScan: {'OK' if f_rc == 0 else 'FAILED'}")
