@@ -15,6 +15,7 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 
 - 通用连续执行规则：见 `references/general-rules.md`
 - 优化任务专项规则：见 `references/optimization-rules.md`
+- 优化指令基线（用户版）：见 `references/OptimizationDirective.md`
 - 汇报模板：见 `references/reporting-template.md`
 - 优化清单：见 `references/optimization-checklist.md`
 - 验收模板：见 `references/acceptance-template.md`
