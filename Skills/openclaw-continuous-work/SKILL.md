@@ -26,3 +26,6 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 
 - 该 Skill 由用户持续编辑；新增场景优先写入 `references/`，保持本文件精简。
 - 如需加强约束，优先扩展：触发词、失败升级策略、完成判定与验收模板。
+- 命名规范巡检脚本：`scripts/NameAudit.py`
+  - 用法：`python scripts/NameAudit.py <target_path> --json`
+  - 作用：扫描不符合“单词首字母大写”规范的文件/文件夹并给出重命名建议。
