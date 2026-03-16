@@ -4,6 +4,7 @@ Auto-generated dependency graph between markdown modules.
 
 ## Nodes
 - `AcceptanceTemplate.md`
+- `ConflictReport.md`
 - `ContinuousExecutionDirective.md`
 - `GeneralRules.md`
 - `ModuleSystem.md`
@@ -16,6 +17,7 @@ Auto-generated dependency graph between markdown modules.
 
 ## Edges
 - `AcceptanceTemplate.md` -> (none)
+- `ConflictReport.md` -> (none)
 - `ContinuousExecutionDirective.md` -> (none)
 - `GeneralRules.md` -> (none)
 - `ModuleSystem.md` -> (none)

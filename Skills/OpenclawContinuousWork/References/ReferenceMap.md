@@ -1,6 +1,7 @@
 # Reference Map
 
 Auto-generated module index. New `References/*.md` files are included after running `python Scripts/BuildReferenceMap.py`.
+Ordering can be configured by `References/ModuleOrder.json`.
 
 ## Canonical Flow
 1. Read `GeneralRules.md` for baseline continuous execution behavior.
@@ -24,5 +25,6 @@ Auto-generated module index. New `References/*.md` files are included after runn
 
 ## Extending
 - Add a new `.md` file into `References/`.
+- (Optional) edit `References/ModuleOrder.json` for load priority.
 - Run `python Scripts/BuildReferenceMap.py`.
 - Commit and push.

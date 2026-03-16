@@ -1,6 +1,7 @@
 {
   "modules": [
     "AcceptanceTemplate.md",
+    "ConflictReport.md",
     "ContinuousExecutionDirective.md",
     "GeneralRules.md",
     "ModuleSystem.md",
@@ -13,6 +14,7 @@
   ],
   "edges": {
     "AcceptanceTemplate.md": [],
+    "ConflictReport.md": [],
     "ContinuousExecutionDirective.md": [],
     "GeneralRules.md": [],
     "ModuleSystem.md": [],

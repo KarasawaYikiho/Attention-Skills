@@ -13,6 +13,7 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 ## Rule Map
 - 规则总览（自动索引）：`References/ReferenceMap.md`
 - 模块化规范：`References/ModuleSystem.md`
+- 模块加载顺序配置：`References/ModuleOrder.json`
 
 ## Core Modules
 - 通用连续执行规则：`References/GeneralRules.md`

@@ -14,6 +14,7 @@
 
 ## Loading Rule
 - 核心入口从 `ReferenceMap.md` 读取。
+- 模块优先级与排除列表由 `ModuleOrder.json` 配置。
 - 新增模块后，运行 `python Scripts/BuildReferenceMap.py` 自动更新索引。
 
 ## User Workflow (Add New MD Anytime)
