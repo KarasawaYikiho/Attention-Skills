@@ -32,6 +32,9 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 - 命名规范巡检：`Scripts/NamingAudit.py`
   - 用法：`python Scripts/NamingAudit.py <target_path> --json`
   - 作用：扫描命名不符合“单词首字母大写”规则的文件/文件夹并给出建议。
+- 模块顺序校验：`Scripts/ValidateModuleOrder.py`
+  - 用法：`python Scripts/ValidateModuleOrder.py`
+  - 作用：校验 `References/ModuleOrder.json`（缺失模块、重复项、冲突项），输出 `ModuleOrderReport.md/json`。
 - 模块索引重建：`Scripts/BuildReferenceMap.py`
   - 用法：`python Scripts/BuildReferenceMap.py`
   - 作用：自动重建 `References/ReferenceMap.md`，让新增 MD 模块即时纳入索引。

@@ -21,6 +21,7 @@ Ordering can be configured by `References/ModuleOrder.json`.
 - `AcceptanceTemplate.md`
 - `QualityRubric.md`
 - `ModuleSystem.md`
+- `ModuleOrderReport.md`
 - `ModuleTemplate.md`
 
 ## Extending

@@ -20,11 +20,13 @@
 ## User Workflow (Add New MD Anytime)
 1. 在 `References/` 新建模块 MD 文件（可复制 `ModuleTemplate.md` 起步）。
 2. 填写模块规则内容。
-3. 运行：`python Scripts/BuildReferenceMap.py`
-4. 运行：`python Scripts/BuildModuleGraph.py`
-5. 运行：`python Scripts/DetectRuleConflicts.py`
-6. 可选运行质量巡检：`python Scripts/ContentLinkAudit.py . --json`
-7. 提交并推送。
+3. （可选）调整 `ModuleOrder.json` 的 priority/exclude。
+4. 运行：`python Scripts/ValidateModuleOrder.py`
+5. 运行：`python Scripts/BuildReferenceMap.py`
+6. 运行：`python Scripts/BuildModuleGraph.py`
+7. 运行：`python Scripts/DetectRuleConflicts.py`
+8. 可选运行质量巡检：`python Scripts/ContentLinkAudit.py . --json`
+9. 提交并推送。
 
 ## Notes
 - 不改动 `SKILL.md` 主结构，除非入口逻辑变化。

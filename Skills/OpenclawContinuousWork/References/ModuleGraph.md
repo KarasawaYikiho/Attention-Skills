@@ -7,6 +7,7 @@ Auto-generated dependency graph between markdown modules.
 - `ConflictReport.md`
 - `ContinuousExecutionDirective.md`
 - `GeneralRules.md`
+- `ModuleOrderReport.md`
 - `ModuleSystem.md`
 - `ModuleTemplate.md`
 - `OptimizationChecklist.md`
@@ -20,6 +21,7 @@ Auto-generated dependency graph between markdown modules.
 - `ConflictReport.md` -> (none)
 - `ContinuousExecutionDirective.md` -> (none)
 - `GeneralRules.md` -> (none)
+- `ModuleOrderReport.md` -> (none)
 - `ModuleSystem.md` -> (none)
 - `ModuleTemplate.md` -> (none)
 - `OptimizationChecklist.md` -> (none)

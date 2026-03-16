@@ -49,6 +49,7 @@ def main() -> None:
         "target": str(target),
         "naming": {"rc": n_rc, "data": json.loads(n_out) if n_out else None, "stderr": n_err},
         "content_link": {"rc": c_rc, "data": json.loads(c_out) if c_out else None, "stderr": c_err},
+        "module_order": {"rc": o_rc, "stdout": o_out, "stderr": o_err},
         "reference_map": {"rc": m_rc, "stdout": m_out, "stderr": m_err},
         "module_graph": {"rc": g_rc, "stdout": g_out, "stderr": g_err},
         "conflict_scan": {"rc": f_rc, "stdout": f_out, "stderr": f_err},

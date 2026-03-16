@@ -34,7 +34,7 @@ def load_order_config() -> tuple[list[str], set[str]]:
         return DEFAULT_PRIORITY, set(DEFAULT_EXCLUDE)
 
     try:
-        data = json.loads(ORDER_FILE.read_text(encoding="utf-8"))
+        data = json.loads(ORDER_FILE.read_text(encoding="utf-8-sig"))
         prio = data.get("priority", DEFAULT_PRIORITY)
         excl = set(data.get("exclude", list(DEFAULT_EXCLUDE)))
         return list(prio), excl

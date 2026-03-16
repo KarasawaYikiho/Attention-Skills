@@ -2,7 +2,7 @@
 
 Auto-generated potential rule conflict report (keyword heuristic).
 
-- Modules scanned: 10
+- Modules scanned: 11
 - Potential conflict groups: 0
 
 ## Results
