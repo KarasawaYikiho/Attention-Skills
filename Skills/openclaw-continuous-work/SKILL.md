@@ -9,11 +9,12 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 
 - 连续推进：接到指令后持续执行直到完成。
 - 优化闭环：优化任务必须全链路落地并回归验证。
-- 高信噪比反馈：里程碑式汇报，避免刷屏。
+- 高信噪比反馈：里程碑式 + 时间式汇报，避免沉默与刷屏。
 
 ## Operational Rules
 
 - 通用连续执行规则：见 `references/general-rules.md`
+- 持续执行强约束（用户提示词整合）：见 `references/ContinuousExecutionDirective.md`
 - 优化任务专项规则：见 `references/optimization-rules.md`
 - 优化指令基线（用户版）：见 `references/OptimizationDirective.md`
 - 汇报模板：见 `references/reporting-template.md`
