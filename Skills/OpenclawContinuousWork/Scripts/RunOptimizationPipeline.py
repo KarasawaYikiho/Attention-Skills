@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 RunOptimizationPipeline.py
 One-command pipeline for module maintenance:
@@ -37,11 +37,13 @@ def main() -> None:
     content_script = skill_root / "Scripts" / "ContentLinkAudit.py"
     map_script = skill_root / "Scripts" / "BuildReferenceMap.py"
     graph_script = skill_root / "Scripts" / "BuildModuleGraph.py"
+    conflict_script = skill_root / "Scripts" / "DetectRuleConflicts.py"
 
     n_rc, n_out, n_err = run([sys.executable, str(naming_script), str(target), "--json"], skill_root)
     c_rc, c_out, c_err = run([sys.executable, str(content_script), str(target), "--json"], skill_root)
     m_rc, m_out, m_err = run([sys.executable, str(map_script)], skill_root)
     g_rc, g_out, g_err = run([sys.executable, str(graph_script)], skill_root)
+    f_rc, f_out, f_err = run([sys.executable, str(conflict_script)], skill_root)
 
     result = {
         "target": str(target),
@@ -49,9 +51,10 @@ def main() -> None:
         "content_link": {"rc": c_rc, "data": json.loads(c_out) if c_out else None, "stderr": c_err},
         "reference_map": {"rc": m_rc, "stdout": m_out, "stderr": m_err},
         "module_graph": {"rc": g_rc, "stdout": g_out, "stderr": g_err},
+        "conflict_scan": {"rc": f_rc, "stdout": f_out, "stderr": f_err},
     }
 
-    ok = n_rc == 0 and c_rc == 0 and m_rc == 0 and g_rc == 0
+    ok = n_rc == 0 and c_rc == 0 and m_rc == 0 and g_rc == 0 and f_rc == 0
     result["ok"] = ok
 
     if args.json:
@@ -66,15 +69,8 @@ def main() -> None:
         print(f"Missing Links: {miss_count}")
         print(f"ReferenceMap: {'OK' if m_rc == 0 else 'FAILED'}")
         print(f"ModuleGraph: {'OK' if g_rc == 0 else 'FAILED'}")
+        print(f"ConflictScan: {'OK' if f_rc == 0 else 'FAILED'}")
         print(f"Pipeline: {'OK' if ok else 'FAILED'}")
-
-    if not ok:
-        raise SystemExit(1)
-
-
-if __name__ == "__main__":
-    main()
-     print(f"Pipeline: {'OK' if ok else 'FAILED'}")
 
     if not ok:
         raise SystemExit(1)
