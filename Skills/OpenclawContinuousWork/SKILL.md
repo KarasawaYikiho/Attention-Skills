@@ -34,6 +34,9 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 - 模块索引重建：`Scripts/BuildReferenceMap.py`
   - 用法：`python Scripts/BuildReferenceMap.py`
   - 作用：自动重建 `References/ReferenceMap.md`，让新增 MD 模块即时纳入索引。
+- 模块依赖图构建：`Scripts/BuildModuleGraph.py`
+  - 用法：`python Scripts/BuildModuleGraph.py`
+  - 作用：自动生成 `References/ModuleGraph.md` 与 `References/ModuleGraph.json`。
 - 内容去重与链接巡检：`Scripts/ContentLinkAudit.py`
   - 用法：`python Scripts/ContentLinkAudit.py <target_path> --json`
   - 作用：检测重复段落与失效 Markdown 链接，支持持续精简与联动。

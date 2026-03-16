@@ -5,7 +5,8 @@ One-command pipeline for module maintenance:
 1) Naming audit
 2) Content/link audit
 3) Reference map rebuild
-4) Summary output
+4) Module graph rebuild
+5) Summary output
 """
 
 from __future__ import annotations
@@ -34,19 +35,22 @@ def main() -> None:
     naming_script = skill_root / "Scripts" / "NamingAudit.py"
     content_script = skill_root / "Scripts" / "ContentLinkAudit.py"
     map_script = skill_root / "Scripts" / "BuildReferenceMap.py"
+    graph_script = skill_root / "Scripts" / "BuildModuleGraph.py"
 
     n_rc, n_out, n_err = run([sys.executable, str(naming_script), str(target), "--json"], skill_root)
     c_rc, c_out, c_err = run([sys.executable, str(content_script), str(target), "--json"], skill_root)
     m_rc, m_out, m_err = run([sys.executable, str(map_script)], skill_root)
+    g_rc, g_out, g_err = run([sys.executable, str(graph_script)], skill_root)
 
     result = {
         "target": str(target),
         "naming": {"rc": n_rc, "data": json.loads(n_out) if n_out else None, "stderr": n_err},
         "content_link": {"rc": c_rc, "data": json.loads(c_out) if c_out else None, "stderr": c_err},
         "reference_map": {"rc": m_rc, "stdout": m_out, "stderr": m_err},
+        "module_graph": {"rc": g_rc, "stdout": g_out, "stderr": g_err},
     }
 
-    ok = n_rc == 0 and c_rc == 0 and m_rc == 0
+    ok = n_rc == 0 and c_rc == 0 and m_rc == 0 and g_rc == 0
     result["ok"] = ok
 
     if args.json:
@@ -60,6 +64,7 @@ def main() -> None:
         print(f"Duplicate Paragraph Groups: {dup_count}")
         print(f"Missing Links: {miss_count}")
         print(f"ReferenceMap: {'OK' if m_rc == 0 else 'FAILED'}")
+        print(f"ModuleGraph: {'OK' if g_rc == 0 else 'FAILED'}")
         print(f"Pipeline: {'OK' if ok else 'FAILED'}")
 
     if not ok:
