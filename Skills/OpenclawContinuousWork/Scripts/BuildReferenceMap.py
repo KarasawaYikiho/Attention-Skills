@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REF_DIR = ROOT / "References"
 MAP_FILE = REF_DIR / "ReferenceMap.md"
 
-EXCLUDE = {"ReferenceMap.md"}
+EXCLUDE = {"ReferenceMap.md", "ModuleGraph.md", "ConflictReport.md"}
 PRIORITY = [
     "GeneralRules.md",
     "ContinuousExecutionDirective.md",

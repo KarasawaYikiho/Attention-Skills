@@ -6,7 +6,8 @@ One-command pipeline for module maintenance:
 2) Content/link audit
 3) Reference map rebuild
 4) Module graph rebuild
-5) Summary output
+5) Conflict scan
+6) Summary output
 """
 
 from __future__ import annotations
@@ -66,6 +67,14 @@ def main() -> None:
         print(f"ReferenceMap: {'OK' if m_rc == 0 else 'FAILED'}")
         print(f"ModuleGraph: {'OK' if g_rc == 0 else 'FAILED'}")
         print(f"Pipeline: {'OK' if ok else 'FAILED'}")
+
+    if not ok:
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()
+     print(f"Pipeline: {'OK' if ok else 'FAILED'}")
 
     if not ok:
         raise SystemExit(1)

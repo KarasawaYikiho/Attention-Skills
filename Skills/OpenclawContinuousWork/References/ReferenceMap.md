@@ -20,7 +20,6 @@ Auto-generated module index. New `References/*.md` files are included after runn
 - `AcceptanceTemplate.md`
 - `QualityRubric.md`
 - `ModuleSystem.md`
-- `ModuleGraph.md`
 - `ModuleTemplate.md`
 
 ## Extending

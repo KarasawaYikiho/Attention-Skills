@@ -21,8 +21,9 @@
 2. 填写模块规则内容。
 3. 运行：`python Scripts/BuildReferenceMap.py`
 4. 运行：`python Scripts/BuildModuleGraph.py`
-5. 可选运行质量巡检：`python Scripts/ContentLinkAudit.py . --json`
-6. 提交并推送。
+5. 运行：`python Scripts/DetectRuleConflicts.py`
+6. 可选运行质量巡检：`python Scripts/ContentLinkAudit.py . --json`
+7. 提交并推送。
 
 ## Notes
 - 不改动 `SKILL.md` 主结构，除非入口逻辑变化。
