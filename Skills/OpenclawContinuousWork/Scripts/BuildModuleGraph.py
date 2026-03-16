@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 BuildModuleGraph.py
 Generate module dependency graph from markdown links in References/*.md

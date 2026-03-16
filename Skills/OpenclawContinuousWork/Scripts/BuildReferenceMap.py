@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 BuildReferenceMap.py
 Auto-generate References/ReferenceMap.md so users can add new .md modules anytime.

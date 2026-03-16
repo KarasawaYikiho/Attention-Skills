@@ -1,4 +1,4 @@
-﻿# Optimization Checklist (Reference)
+# Optimization Checklist (Reference)
 
 - Scope alignment
 - Baseline assessment

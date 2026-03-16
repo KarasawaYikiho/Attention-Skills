@@ -1,4 +1,4 @@
-﻿# Module Template
+# Module Template
 
 ## Purpose
 - <Describe what this module is for>

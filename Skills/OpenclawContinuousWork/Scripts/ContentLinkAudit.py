@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 ContentLinkAudit.py
 Audit markdown modules for:

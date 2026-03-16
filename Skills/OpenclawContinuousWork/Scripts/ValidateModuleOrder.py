@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 ValidateModuleOrder.py
 Validate References/ModuleOrder.json:

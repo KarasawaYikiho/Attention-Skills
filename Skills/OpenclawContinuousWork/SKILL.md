@@ -47,6 +47,9 @@ description: 全面优化 OpenClaw 对话体验并强化任务闭环执行。Use
 - 内容去重与链接巡检：`Scripts/ContentLinkAudit.py`
   - 用法：`python Scripts/ContentLinkAudit.py <target_path> --json`
   - 作用：检测重复段落与失效 Markdown 链接，支持持续精简与联动。
+- 编码规范化：`Scripts/NormalizeEncoding.py`
+  - 用法：`python Scripts/NormalizeEncoding.py`
+  - 作用：统一文本文件为 UTF-8（无 BOM）+ LF，降低写入与解析报错风险。
 
 ## Maintainer Notes
 - 新增场景优先写入 `References/`，保持本文件精简。

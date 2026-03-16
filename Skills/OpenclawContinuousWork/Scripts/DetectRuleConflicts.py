@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 DetectRuleConflicts.py
 Scan markdown modules for potential rule conflicts based on opposite keyword patterns.

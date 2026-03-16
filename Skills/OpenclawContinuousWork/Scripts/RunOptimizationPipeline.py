@@ -8,7 +8,8 @@ One-command pipeline for module maintenance:
 4) Reference map rebuild
 5) Module graph rebuild
 6) Conflict scan
-7) Summary output
+7) Encoding normalization
+8) Summary output
 """
 
 from __future__ import annotations
@@ -40,6 +41,7 @@ def main() -> None:
     map_script = skill_root / "Scripts" / "BuildReferenceMap.py"
     graph_script = skill_root / "Scripts" / "BuildModuleGraph.py"
     conflict_script = skill_root / "Scripts" / "DetectRuleConflicts.py"
+    normalize_script = skill_root / "Scripts" / "NormalizeEncoding.py"
 
     n_rc, n_out, n_err = run([sys.executable, str(naming_script), str(target), "--json"], skill_root)
     c_rc, c_out, c_err = run([sys.executable, str(content_script), str(target), "--json"], skill_root)
@@ -47,6 +49,7 @@ def main() -> None:
     m_rc, m_out, m_err = run([sys.executable, str(map_script)], skill_root)
     g_rc, g_out, g_err = run([sys.executable, str(graph_script)], skill_root)
     f_rc, f_out, f_err = run([sys.executable, str(conflict_script)], skill_root)
+    z_rc, z_out, z_err = run([sys.executable, str(normalize_script)], skill_root)
 
     result = {
         "target": str(target),
@@ -56,9 +59,10 @@ def main() -> None:
         "reference_map": {"rc": m_rc, "stdout": m_out, "stderr": m_err},
         "module_graph": {"rc": g_rc, "stdout": g_out, "stderr": g_err},
         "conflict_scan": {"rc": f_rc, "stdout": f_out, "stderr": f_err},
+        "normalize_encoding": {"rc": z_rc, "stdout": z_out, "stderr": z_err},
     }
 
-    ok = n_rc == 0 and c_rc == 0 and o_rc == 0 and m_rc == 0 and g_rc == 0 and f_rc == 0
+    ok = n_rc == 0 and c_rc == 0 and o_rc == 0 and m_rc == 0 and g_rc == 0 and f_rc == 0 and z_rc == 0
     result["ok"] = ok
 
     if args.json:
@@ -75,6 +79,7 @@ def main() -> None:
         print(f"ReferenceMap: {'OK' if m_rc == 0 else 'FAILED'}")
         print(f"ModuleGraph: {'OK' if g_rc == 0 else 'FAILED'}")
         print(f"ConflictScan: {'OK' if f_rc == 0 else 'FAILED'}")
+        print(f"NormalizeEncoding: {'OK' if z_rc == 0 else 'FAILED'}")
         print(f"Pipeline: {'OK' if ok else 'FAILED'}")
 
     if not ok:
