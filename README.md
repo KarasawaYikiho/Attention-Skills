@@ -1,11 +1,15 @@
-﻿# Attention-Skills
+# Attention-Skills
 
 Repository for building and packaging Agent Skills.
 
 ## Structure
-- Skills/ - skill source folders (each folder contains a SKILL.md)
-- Dist/ - packaged .skill artifacts
-- Scripts/ - helper scripts for validation/packaging
+- `Skills/` - Skill source folders (each folder contains a `SKILL.md`)
+- `Dist/` - Packaged `.skill` artifacts
+- `Scripts/` - Repository-level helper scripts
 
-## Next Step
-Create the first skill folder under Skills/ (example: ttention-checker) and add SKILL.md.
+## Current Skill
+- `Skills/OpenclawContinuousWork` - Continuous execution and optimization workflow rules for OpenClaw conversation quality.
+
+## Naming Rule (Project Convention)
+- Use single words or word groups with each word capitalized for normal files/folders.
+- Keep tool-required special filenames (for example `.gitignore`) unchanged.
