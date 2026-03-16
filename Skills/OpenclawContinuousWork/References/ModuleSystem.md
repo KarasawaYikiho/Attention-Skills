@@ -1,27 +1,23 @@
-# Module System
+﻿# Module System
 
 ## Purpose
-使该 Skill 支持“随时新增 MD 模块文件”且无需改动核心规则。
-
+浣胯 Skill 鏀寔鈥滈殢鏃舵柊澧?MD 妯″潡鏂囦欢鈥濅笖鏃犻渶鏀瑰姩鏍稿績瑙勫垯銆?
 ## Module Convention
-- 所有可扩展模块放在 `References/` 目录下。
-- 文件命名遵循首字母大写规范（例如：`RiskControl.md`、`DeliveryPolicy.md`）。
-- 每个模块文件建议包含：
-  - `# <Title>`
+- 鎵€鏈夊彲鎵╁睍妯″潡鏀惧湪 `References/` 鐩綍涓嬨€?- 鏂囦欢鍛藉悕閬靛惊棣栧瓧姣嶅ぇ鍐欒鑼冿紙渚嬪锛歚RiskControl.md`銆乣DeliveryPolicy.md`锛夈€?- 姣忎釜妯″潡鏂囦欢寤鸿鍖呭惈锛?  - `# <Title>`
   - `## Purpose`
-  - `## Rules` 或 `## Checklist`
-  - （可选）`## Examples`
+  - `## Rules` 鎴?`## Checklist`
+  - 锛堝彲閫夛級`## Examples`
 
 ## Loading Rule
-- 核心入口始终从 `ReferenceMap.md` 读取。
-- 新增模块后，执行脚本 `Scripts/BuildReferenceMap.py` 自动更新 `ReferenceMap.md`。
-
+- 鏍稿績鍏ュ彛濮嬬粓浠?`ReferenceMap.md` 璇诲彇銆?- 鏂板妯″潡鍚庯紝鎵ц鑴氭湰 `Scripts/BuildReferenceMap.py` 鑷姩鏇存柊 `ReferenceMap.md`銆?
 ## User Workflow (Add New MD Anytime)
-1. 在 `References/` 新建模块 MD 文件。
-2. 填写模块规则内容。
-3. 运行：`python Scripts/BuildReferenceMap.py`
-4. 提交并推送。
-
+1. 鍦?`References/` 鏂板缓妯″潡 MD 鏂囦欢銆?2. 濉啓妯″潡瑙勫垯鍐呭銆?3. 杩愯锛歚python Scripts/BuildReferenceMap.py`
+4. 鎻愪氦骞舵帹閫併€?
 ## Notes
-- 不要改动 `SKILL.md` 的主结构，除非入口逻辑变化。
-- 模块之间如有依赖，直接在模块内增加“See also: <OtherModule.md>”。
+- 涓嶈鏀瑰姩 `SKILL.md` 鐨勪富缁撴瀯锛岄櫎闈炲叆鍙ｉ€昏緫鍙樺寲銆?- 妯″潡涔嬮棿濡傛湁渚濊禆锛岀洿鎺ュ湪妯″潡鍐呭鍔犫€淪ee also: <OtherModule.md>鈥濄€?
+## Recommended Starter
+- Copy ModuleTemplate.md when creating a new module to keep structure consistent.
+
+## Quality Check
+- Run python Scripts/ContentLinkAudit.py . --json to detect repeated paragraphs and missing markdown links.
+
